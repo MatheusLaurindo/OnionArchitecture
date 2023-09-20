@@ -4,8 +4,10 @@ import { BookResponseListDto } from "../../dtos/bookDTO";
 import TitleGrid from "../../components/TitleGrid";
 import Button from "../../components/Button";
 import Table from "../../components/Table";
+import { useNavigate } from "react-router-dom";
 
 function Listagem() {
+  const navigate = useNavigate();
   const url = "https://localhost:7025/api/Book/";
   const [data, setData] = useState<BookResponseListDto[]>([
     {
@@ -38,7 +40,7 @@ function Listagem() {
         <div className="grid grid-cols-1">
           <TitleGrid
             title="BOOKS"
-            button={<Button text="Add new Book" color="zinc-700" />}
+            button={<Button onClick={() => navigate("/criar")} text="Add new Book" color="zinc-700" />}
           />
           <Table
             columns={["Name", "Description", "Writer", "Insert Date"]}
