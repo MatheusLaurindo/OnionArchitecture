@@ -19,7 +19,8 @@ function Criar() {
     setBook({ ...book, [event.target.name]: event.target.value });
   };
 
-  const postBook = async () => {
+  const postBook = async (e:any) => {
+    e.preventDefault();
     if (
       book.bookName !== "" &&
       book.bookDescription !== "" &&
@@ -44,7 +45,7 @@ function Criar() {
   return (
     <div className="bg-zinc-900 p-10 rounded shadow-2xl">
       <TitleGrid title="ADD A NEW BOOK TO THE LIST" />
-      <form className="mt-8">
+      <form className="mt-8" onSubmit={postBook}>
         <div className="grid grid-cols-2 gap-4">
           <div className="mb-6">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -82,7 +83,7 @@ function Criar() {
             autoComplete="off"
           />
         </div>
-        <Button text="Submit" color={"zinc-700"} onClick={postBook} />
+        <Button type="submit" text="Submit" color={"zinc-700"} />
       </form>
     </div>
   );

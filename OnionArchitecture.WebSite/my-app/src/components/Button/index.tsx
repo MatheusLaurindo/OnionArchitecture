@@ -1,6 +1,7 @@
-function Button({ text, color, onClick }: IButton) {
+function Button({ type, text, color, onClick }: IButton) {
   return (
     <button
+      type={type}
       onClick={onClick}
       className={`p-2 rounded-sm hover:cursor-pointer hover:scale-105 transition-transform bg-${color}`}
     >
@@ -10,6 +11,7 @@ function Button({ text, color, onClick }: IButton) {
 }
 
 type IButton = {
+  type: "submit" | "button";
   text: string;
   color: string;
   onClick?: () => void;

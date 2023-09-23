@@ -4,7 +4,8 @@ export type BookRequestDto = {
   bookWriter: string;
 };
 
-export type BookResponsetDto = {
+export type BookResponseDto = {
+  id: number;
   bookName: string;
   bookDescription: string;
   bookWriter: string;

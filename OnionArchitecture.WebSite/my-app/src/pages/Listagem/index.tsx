@@ -40,7 +40,7 @@ function Listagem() {
         <div className="grid grid-cols-1">
           <TitleGrid
             title="BOOKS"
-            button={<Button onClick={() => navigate("/criar")} text="Add new Book" color="zinc-700" />}
+            button={<Button type="button" onClick={() => navigate("/criar")} text="Add new Book" color="zinc-700" />}
           />
           <Table
             columns={["Name", "Description", "Writer", "Insert Date"]}
